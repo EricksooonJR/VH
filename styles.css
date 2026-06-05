@@ -982,7 +982,7 @@ footer{
 @media(max-width:768px){
 
     .banner-linea{
-        height:250px;
+        height:200px;
     }
         .banner-overlay h1 {
         font-size: 2rem; /* Bajó de 4rem a 2.5rem */
