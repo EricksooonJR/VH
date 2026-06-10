@@ -1,6 +1,4 @@
-/* =========================
-   SLIDER
-========================= */
+
 
 const slides = document.querySelectorAll(".slide");
 let currentSlide = 0;
@@ -125,6 +123,8 @@ function cambiarAroma(nombre, imagen, boton) {
     }
   }
 
+  actualizarLinkMuestra(nombre);
+
   const botones = document.querySelectorAll(".aroma-btn");
 
   botones.forEach((btn) => {
@@ -177,22 +177,22 @@ function cargarContactoGlobal() {
       </p>
 
       <div class="social-container">
-        <a href="#" class="social-card facebook" target="_blank">
+        <a href="https://www.facebook.com/share/18KSguB1Kg/?mibextid=wwXIfr" class="social-card facebook" target="_blank">
           <i class="fa-brands fa-facebook-f"></i>
           <span>Facebook</span>
         </a>
 
-        <a href="#" class="social-card instagram" target="_blank">
+        <a href="https://www.instagram.com/van_hogar?utm_source=qr" class="social-card instagram" target="_blank">
           <i class="fa-brands fa-instagram"></i>
           <span>Instagram</span>
         </a>
 
-        <a href="#" class="social-card whatsapp" target="_blank">
+        <a href="https://wa.me/522383868293" class="social-card whatsapp" target="_blank">
           <i class="fa-brands fa-whatsapp"></i>
           <span>WhatsApp</span>
         </a>
 
-        <a href="#" class="social-card tiktok" target="_blank">
+        <a href="https://www.tiktok.com/@vanhogar?_r=1&_t=ZS-976EAyrtW41" class="social-card tiktok" target="_blank">
           <i class="fa-brands fa-tiktok"></i>
           <span>TikTok</span>
         </a>
@@ -208,7 +208,7 @@ function cargarContactoGlobal() {
   `;
 
   whatsappContainer.innerHTML = `
-    <a href="https://wa.me/5210000000000" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/522383868293" class="whatsapp-float" target="_blank">
       <i class="fa-brands fa-whatsapp"></i>
 
       <div class="whatsapp-text">
@@ -224,3 +224,80 @@ if (document.readyState === "loading") {
 } else {
   cargarContactoGlobal();
 }
+
+function actualizarColorSelector(select) {
+  select.style.backgroundColor =
+    select.options[select.selectedIndex].dataset.color;
+  select.style.color = "#ffffff";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const select = document.querySelector(".aroma-select");
+
+  if (select) {
+    actualizarColorSelector(select);
+  }
+});
+
+function actualizarLinkMuestra(aroma) {
+  const btn = document.querySelector(".btn-muestra-gratis");
+
+  if (!btn) return;
+
+  let nombreProducto = "Producto";
+
+  const contenedorProducto = document.querySelector(".producto-info-page");
+
+  if (contenedorProducto) {
+    const titulo = contenedorProducto.querySelector("h1, h2, h3");
+
+    if (titulo) {
+      nombreProducto = titulo.textContent.trim();
+    }
+  }
+
+  const mensaje = `Quisiera solicitar mi muestra gratis del producto ${nombreProducto} ${aroma}`;
+
+  btn.href =
+    "https://wa.me/522383868293?text=" +
+    encodeURIComponent(mensaje);
+}
+document.addEventListener("DOMContentLoaded", () => {
+  actualizarLinkMuestra("Lavanda");
+});
+
+
+
+/* ===== EFECTO LIMPIEZA HOGAR ===== */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const contenedor = document.querySelector(".burbujas-limpieza");
+
+  if (!contenedor) return;
+
+  for (let i = 0; i < 35; i++) {
+    const burbuja = document.createElement("div");
+
+    burbuja.classList.add("burbuja");
+
+    const size = Math.random() * 50 + 10;
+
+    burbuja.style.width = `${size}px`;
+    burbuja.style.height = `${size}px`;
+
+    burbuja.style.left = `${Math.random() * 100}%`;
+
+    burbuja.style.animationDuration =
+      `${Math.random() * 4 + 3}s`;
+
+    burbuja.style.animationDelay =
+      `${Math.random() * 2}s`;
+
+    contenedor.appendChild(burbuja);
+  }
+
+  setTimeout(() => {
+    contenedor.remove();
+  }, 8000);
+});
+
