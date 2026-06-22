@@ -1423,3 +1423,116 @@ span,
         font-size:16px;
     }
 }
+
+
+
+/* =========================
+   QUIÉNES SOMOS
+========================= */
+
+.nosotros {
+  padding: 80px 10%;
+  background: #ffffff;
+  text-align: center;
+}
+
+.nosotros-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.nosotros h2 {
+  font-size: 2.5rem;
+  color: #0d4c92;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.nosotros h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #00bcd4;
+  margin: 15px auto 0;
+  border-radius: 10px;
+}
+
+.nosotros p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* =========================
+   MISIÓN Y VISIÓN
+========================= */
+
+.mision-vision {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 0 10% 80px;
+  background: #ffffff;
+  flex-wrap: wrap;
+}
+
+.mv-card {
+  background: #fff;
+  width: 400px;
+  padding: 35px 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  border-top: 5px solid #00bcd4;
+}
+
+.mv-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+.mv-card i {
+  font-size: 3rem;
+  color: #0d4c92;
+  margin-bottom: 20px;
+}
+
+.mv-card h3 {
+  font-size: 1.8rem;
+  color: #0d4c92;
+  margin-bottom: 15px;
+}
+
+.mv-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .nosotros {
+    padding: 60px 25px;
+  }
+
+  .nosotros h2 {
+    font-size: 2rem;
+  }
+
+  .nosotros p {
+    font-size: 1rem;
+  }
+
+  .mision-vision {
+    padding: 0 25px 60px;
+  }
+
+  .mv-card {
+    width: 100%;
+  }
+}
