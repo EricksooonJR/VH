@@ -1,14 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 :root{
     --azul-principal:#6bbfe8;
     --azul-secundario:#8fd3f4;
     --turquesa:#b8f2e6;
     --verde-agua:#d8fff5;
     --fondo:#f8fffd;
---texto:#111111;    --blanco:#ffffff;
---azul-menu:#0b74c9;
+    --texto:#111111;
+    --blanco:#ffffff;
+    --azul-menu:#0b74c9;
 
     --gradiente-principal:linear-gradient(
         135deg,
@@ -17,6 +23,16 @@
         #b8f2e6,
         #8fd3f4
     );
+--radius-sm:12px;
+--radius-md:24px;
+--radius-lg:35px;
+
+--shadow-sm:0 5px 15px rgba(0,0,0,.08);
+--shadow-md:0 10px 25px rgba(0,0,0,.12);
+--shadow-lg:0 15px 40px rgba(0,0,0,.18);
+
+--transition:.3s ease;
+
 }
 *{
     margin:0;
@@ -76,7 +92,7 @@ body{
     color: var(--texto);
     text-shadow:0 1px 2px rgba(255,255,255,0.15);
     text-decoration:none;
-    transition:0.3s;
+    transition:var(--transition);
     position:relative;
     font-weight:600;
 }
@@ -96,7 +112,7 @@ body{
 
     background:var(--turquesa);
 
-    transition:0.3s;
+    transition:var(--transition);
 }
 
 .navbar a:hover::after{
@@ -164,7 +180,7 @@ body{
     border-radius:12px;
     font-weight:bold;
     box-shadow:0 5px 15px rgba(19,159,211,0.35);
-    transition:0.3s;
+    transition:var(--transition);
 }
 .slide-content a:hover{
     transform:translateY(-3px);
@@ -191,18 +207,6 @@ color:#111;}
     gap:30px;
 }
 
-.linea-card{
-    background:white;
-    padding:40px;
-    border-radius:24px;
-    transition:0.3s;
-    border:1px solid rgba(17,183,201,0.15);
-    box-shadow:0 8px 25px rgba(0,0,0,0.06);
-}
-
-.linea-card:hover{
-    transform:translateY(-10px);
-}
 
 .linea-card i{
     font-size:60px;
@@ -247,7 +251,7 @@ color:#111;}
     border:none;
     border-radius:30px;
     cursor:pointer;
-    transition:0.3s;
+    transition:var(--transition);
     background:white;
     color:var(--texto);
     font-weight:600;
@@ -274,7 +278,7 @@ color:#111;}
     border-radius:24px;
     overflow:hidden;
     box-shadow:0 8px 25px rgba(0,0,0,0.08);
-    transition:0.3s;
+    transition:var(--transition);
     border:1px solid rgba(17,183,201,0.12);
 }
 
@@ -309,60 +313,13 @@ color:#111;}
     text-decoration:none;
     border-radius:12px;
     font-weight:bold;
-    transition:0.3s;
+    transition:var(--transition);
 }
 .product-info a:hover{
     transform:translateY(-2px);
 }
 
 
-/* CONTACTO */
-
-.contacto{
-    background:linear-gradient(135deg,#b8f2e6,#8fd3f4);
-
-    color:#111;
-    padding:100px 20px;
-    text-align:center;
-}
-
-.contacto h2{
-    font-size:45px;
-    margin-bottom:40px;
-}
-
-.contacto form{
-    max-width:600px;
-    margin:auto;
-    display:flex;
-    flex-direction:column;
-    gap:20px;
-}
-
-.contacto input,
-.contacto textarea{
-    padding:15px;
-    border:none;
-    border-radius:10px;
-}
-
-.contacto textarea{
-    min-height:150px;
-}
-
-.contacto button{
-    padding:15px;
-    border:none;
-    background:white;
-    color:#111;
-    border-radius:12px;
-    cursor:pointer;
-    font-weight:bold;
-    transition:0.3s;
-}
-.contacto button:hover{
-    transform:translateY(-2px);
-}
 
 
 /* FOOTER */
@@ -377,97 +334,6 @@ footer{
 
 /* RESPONSIVE */
 
-@media(max-width:768px){
-
-    .header{
-        padding:20px;
-        flex-direction:column;
-        height:auto;
-        gap:15px;
-        position:sticky;
-        top:0;
-    }
-    .banner-linea{
-        margin-top:0;
-    }
-
-    .navbar{
-        flex-wrap:wrap;
-        justify-content:center;
-        margin-top:10px;
-        gap:18px;
-    }
-
-    .slide-content h1{
-        font-size:45px;
-    }
-
-    .slide-content p{
-        font-size:18px;
-    }
-
-    .products{
-        padding:20px;
-    }
-
-    .slider{
-        height:145px;
-        min-height:auto;
-    }
-}
-/* PAGINA PRODUCTO */
-
-.producto-page{
-    width:100%;
-    min-height:100vh;
-    padding:120px 60px;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:50px;
-    align-items:center;
-}
-
-.producto-img img{
-    width:100%;
-    border-radius:20px;
-}
-
-.producto-info-page h1{
-    font-size:50px;
-    margin-bottom:20px;
-}
-
-.producto-info-page p{
-    margin-bottom:30px;
-    line-height:1.8;
-}
-
-.producto-info-page ul{
-    margin-bottom:30px;
-}
-
-.producto-info-page li{
-    margin-bottom:10px;
-}
-
-.producto-info-page a{
-    display:inline-block;
-    padding:15px 30px;
-    background:var(--gradiente-principal);
-    color:white;
-    text-decoration:none;
-    border-radius:12px;
-    font-weight:bold;
-}
-
-@media(max-width:768px){
-
-    .producto-page{
-        grid-template-columns:1fr;
-        padding:120px 20px;
-    }
-
-}
 .logo img{
     height:78px;
     object-fit:contain;
@@ -475,7 +341,7 @@ footer{
     filter:
         drop-shadow(0 4px 12px rgba(0,0,0,0.35))
         drop-shadow(0 0 8px rgba(255,255,255,0.15));
-    transition:0.3s;
+    transition:var(--transition);
 }
 .logo img:hover{
     transform:scale(1.03);
@@ -489,7 +355,7 @@ footer{
 .dropdown-btn{
     cursor:pointer;
     color:var(--texto);
-    transition:0.3s;
+    transition:var(--transition);
 }
 
 .dropdown:hover .dropdown-btn{
@@ -514,7 +380,7 @@ footer{
 
     transform:translateY(10px);
 
-    transition:0.3s;
+    transition:var(--transition);
 
     box-shadow:0 5px 15px rgba(0,0,0,0.2);
     z-index:1002;
@@ -529,7 +395,7 @@ footer{
 
     text-decoration:none;
 
-    transition:0.3s;
+    transition:var(--transition);
 }
 
 .dropdown-content a:hover{
@@ -556,14 +422,21 @@ footer{
     margin-bottom:18px;
 }
 
+/* LINEAS */
+
 .linea-card{
+    background:white;
+    padding:40px;
+    border-radius:24px;
+    transition:var(--transition);
+    border:1px solid rgba(17,183,201,0.15);
+    box-shadow:0 8px 25px rgba(0,0,0,0.06);
     overflow:hidden;
-    transition:0.3s;
     cursor:pointer;
 }
 
 .linea-card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-10px);
 }
 
 .banner-linea{
@@ -649,16 +522,13 @@ footer{
     justify-content:center;
     gap:15px;
 
-    transition:0.3s;
+    transition:var(--transition);
 
     backdrop-filter:blur(10px);
 
     box-shadow:0 10px 30px rgba(0,0,0,0.12);
 }
 
-.social-card i{
-    font-size:2.5rem;
-}
 
 .social-card span{
     font-size:1.1rem;
@@ -726,7 +596,7 @@ footer{
 
     box-shadow:0 10px 25px rgba(0,0,0,0.15);
 
-    transition:0.3s;
+    transition:var(--transition);
 }
 
 .btn-sucursales i{
@@ -763,7 +633,7 @@ footer{
 
     box-shadow:0 10px 30px rgba(0,0,0,0.2);
 
-    transition:0.3s;
+    transition:var(--transition);
 }
 
 .whatsapp-float:hover{
@@ -846,31 +716,13 @@ footer{
 .producto-info-page{
     flex:1;
     min-width:320px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
 }
 
-.producto-info-page h1{
-    font-size:3rem;
-
-    color:#111;
-
-    margin-bottom:20px;
-}
-
-.producto-info-page p{
-    font-size:1.05rem;
-
-    line-height:1.8;
-
-    color:#555;
-
-    margin-bottom:25px;
-}
-
-.producto-info-page h3{
-    color:var(--azul-secundario);
-
-    margin-bottom:15px;
-}
 
 .producto-info-page ul{
     margin:25px 0;
@@ -884,60 +736,7 @@ footer{
     color:#444;
 }
 
-/* =========================================
-   BOTONES AROMAS
-========================================= */
-
-.aromas-container{
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:14px;
-
-    margin:25px 0 35px;
-}
-
-.aroma-btn{
-    border:none;
-
-    background:white;
-
-    color:#111;
-
-    padding:14px 24px;
-
-    border-radius:50px;
-
-    font-size:0.95rem;
-    font-weight:600;
-
-    cursor:pointer;
-
-    border:2px solid #dbeaf5;
-
-    box-shadow:0 5px 15px rgba(0,0,0,0.05);
-
-    transition:0.3s ease;
-}
-
-.aroma-btn:hover{
-    transform:translateY(-4px);
-
-    background:#eef7fc;
-
-    border-color:var(--turquesa);
-}
-
-.aroma-btn.active{
-    background:var(--gradiente-principal);
-
-    color:white;
-
-    border:none;
-
-    box-shadow:0 10px 25px rgba(0,0,0,0.15);
-}
+/* AROMAS */
 
 /* =========================================
    BOTÓN VOLVER
@@ -963,7 +762,7 @@ footer{
 
     font-weight:600;
 
-    transition:0.3s;
+    transition:var(--transition);
 }
 
 .producto-info-page a:hover{
@@ -977,15 +776,12 @@ footer{
 ========================================= */
 
 @media(max-width:768px){
-
     .producto-page{
         padding:100px 25px 60px;
     }
-
     .producto-img img{
         height:380px;
     }
-
     .producto-info-page h1{
         font-size:2.2rem;
     }
@@ -993,18 +789,54 @@ footer{
 
 @media(max-width:768px){
 
+    .header{
+        padding:20px;
+        flex-direction:column;
+        height:auto;
+        gap:15px;
+        position:sticky;
+        top:0;
+    }
+    .banner-linea{
+        margin-top:0;
+    }
+
+    .navbar{
+        flex-wrap:wrap;
+        justify-content:center;
+        margin-top:10px;
+        gap:18px;
+    }
+
+    .slide-content h1{
+        font-size:45px;
+    }
+
+    .slide-content p{
+        font-size:18px;
+    }
+
+    .products{
+        padding:20px;
+    }
+
+    .slider{
+        height:145px;
+        min-height:auto;
+    }
+
     .banner-linea{
         height:145px;
     }
-        .banner-overlay h1 {
-        font-size: 2rem; /* Bajó de 4rem a 2.5rem */
-        margin-bottom: 10px;
+
+    .banner-overlay h1{
+        font-size:2rem;
+        margin-bottom:10px;
     }
 
-    .banner-overlay p {
-        font-size: 0.8rem; /* Bajó de 1.2rem a 1rem */
+    .banner-overlay p{
+        font-size:0.8rem;
     }
-
 }
  
 /* =========================================
@@ -1060,37 +892,49 @@ footer{
         0 0 0 10px rgba(255,255,255,0.65);
 }
 
+
 .producto-info-page h1{
-    font-size:3rem;
-    font-family:'Cormorant Garamond', serif;
-    line-height:0.95;
+    font-size:4.3rem;
+    font-family:'Anton', sans-serif;
+    line-height:1.1;
     text-transform:none;
     font-weight:900;
-    letter-spacing:1px;
+    -webkit-text-stroke: 3px rgba(11,94,120,0.70);
+    letter-spacing:0px;
     text-wrap:balance;
-color:#111;
+    color:#0b5e78;
     text-shadow:
-        2px 2px 0 #ffffff,
-        4px 4px 0 rgba(11,37,69,0.14);
+        -2px -2px 0 #ffffff,
+         2px -2px 0 #ffffff,
+        -2px  2px 0 #ffffff,
+         2px  2px 0 #ffffff,
+         0px  4px 10px rgba(11,37,69,0.20);
+    margin-bottom:24px;
+    text-align:center;
 }
 
-.producto-info-page h1 span,
-.producto-info-page h1 strong{
-color:#111;}
+.producto-info-page h1 span{
+    display:block;
+}
+
 
 .producto-info-page p{
     max-width:560px;
     font-size:1.15rem;
-color:#111;}
+    color:#111;
+    line-height:1.8;
+    margin-bottom:30px;
+}
 
 .producto-info-page h3{
     display:inline-block;
     padding:10px 22px;
-    background:#111;
-    color:white;
+    background:linear-gradient(135deg,#0b5e78,#16c6d9);
+    color:#ffffff;
     border-radius:0 0 16px 16px;
     letter-spacing:0.5px;
     text-transform:none;
+    margin-bottom:22px;
 }
 
 .aromas-container{
@@ -1100,6 +944,7 @@ color:#111;}
     border-radius:24px;
     box-shadow:0 18px 45px rgba(11,37,69,0.12);
     border:1px solid rgba(255,255,255,0.85);
+    margin-top:15px;
 }
 
 .aroma-btn{
@@ -1125,16 +970,29 @@ color:#111;}
 
 @media(max-width:768px){
     .producto-info-page h1{
-        font-size:2rem;
+        font-size:1.5rem;
+        line-height:1.3;
+        letter-spacing:12px;
+        text-align:center;
+        width:100%;
+        font-weight:900;
+        -webkit-text-stroke: 2.5px rgba(11,94,120,0.70);
     }
 
+    .producto-info-page h1 span{
+        display:block;
+        width:100%;
+        margin-top:10px;
+    }
+    .producto-page{
+        padding:100px 25px 60px;
+        min-height:auto;
+    }
+    .producto-img img{
+        height:380px;
+    }
     .producto-page::before{
         opacity:0.85;
-    }
-        .producto-page{
-
-        min-height:auto;
-
     }
 }
 
@@ -1225,9 +1083,8 @@ h2,
 .banner-overlay h1,
 .slide-content h1,
 .lineas h2,
-.contacto h2,
-.producto-info-page h1{
-font-family:'Prata', serif;
+.contacto h2{
+font-family:'DM Serif Display', serif;
 
 font-weight:400;
 
@@ -1305,9 +1162,6 @@ span,
     color: #111 !important;
 }
 
-.btn-muestra-gratis i {
-    color: #111 !important;
-}
 
 
 
@@ -1535,4 +1389,37 @@ span,
   .mv-card {
     width: 100%;
   }
+}
+
+/* =========================================
+   EFECTO SUAVE AL DESLIZAR
+========================================= */
+
+.linea-card,
+.product-card,
+.social-card,
+.mv-card,
+.nosotros-container,
+.banner-linea,
+.producto-img,
+.producto-info-page,
+.filters,
+.contacto,
+.sucursales-container{
+    animation: aparecerScroll linear;
+    animation-timeline: view();
+    animation-range: entry 10% cover 30%;
+}
+
+@keyframes aparecerScroll{
+    from{
+        opacity:0;
+        transform:translateY(60px) scale(.96);
+        filter:blur(6px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+        filter:blur(0);
+    }
 }
