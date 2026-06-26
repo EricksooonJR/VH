@@ -1423,3 +1423,18 @@ span,
         filter:blur(0);
     }
 }
+
+
+.linea-card h3{
+    color:var(--color-linea,#0B5E78);
+}
+
+.linea-card h3::after{
+    content:"";
+    display:block;
+    width:55px;
+    height:3px;
+    margin:10px auto 0;
+    background:var(--color-linea,#0B5E78);
+    border-radius:20px;
+}
