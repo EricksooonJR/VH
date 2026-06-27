@@ -191,15 +191,21 @@ body{
 /* LINEAS */
 
 .lineas{
-    padding:100px 80px;
+    padding:0px 80px;
     background:linear-gradient(to bottom,#ffffff,#eef8fb);
     text-align:center;
 }
 
 .lineas h2{
-    font-size:3.8rem;
+font-family:'Bodoni Moda', serif;
+font-weight:800;
+font-size:3.4rem;
+letter-spacing:1px;
+    letter-spacing:3px;
+    color:#111;
     margin-bottom:15px;
-color:#111;}
+    text-align:center;
+}
 
 
 
@@ -856,6 +862,10 @@ footer{
         max-width:90%;
         margin:0 auto;
     }
+
+    .lineas h2{
+        font-size:2rem;
+    }
 }
  
 /* =========================================
@@ -1100,7 +1110,6 @@ h1,
 h2,
 .banner-overlay h1,
 .slide-content h1,
-.lineas h2,
 .contacto h2{
 font-family:'DM Serif Display', serif;
 
