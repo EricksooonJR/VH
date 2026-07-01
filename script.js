@@ -328,3 +328,32 @@ document.addEventListener("DOMContentLoaded", () => {
     contenedor.remove();
   }, 8000);
 });
+
+
+function cambiarAroma(nombre, imagen, color, boton) {
+  // Cambiar imagen
+  document.getElementById("productoImagen").src = imagen;
+
+  // Cambiar nombre del aroma (si existe)
+  const titulo = document.getElementById("aromaTitulo");
+  if (titulo) {
+    titulo.textContent = "Modelo Actual: " + nombre;
+  }
+
+  // Quitar selección anterior
+  document.querySelectorAll(".aroma-btn").forEach((btn) => {
+    btn.classList.remove("active");
+    btn.style.background = "";
+    btn.style.color = "";
+  });
+
+  // Activar botón seleccionado
+  boton.classList.add("active");
+  boton.style.background = color;
+  boton.style.color = "#fff";
+
+  // Si utilizas el botón de WhatsApp para las muestras
+  if (typeof actualizarLinkMuestra === "function") {
+    actualizarLinkMuestra(nombre);
+  }
+}
