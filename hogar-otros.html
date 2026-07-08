@@ -94,7 +94,7 @@
           <span>PRODUCTOS</span>
         </h1>
 
-        <p>
+        <p id="descripcionProducto">
           Productos complementarios para limpieza, mantenimiento, desinfección y
           uso especializado en el hogar, negocio o industria.
         </p>
@@ -111,43 +111,89 @@
                 this.options[this.selectedIndex].dataset.color,
                 this,
               );
+              document.getElementById('descripcionProducto').textContent =
+                this.options[this.selectedIndex].dataset.descripcion;
               this.style.backgroundColor =
                 this.options[this.selectedIndex].dataset.color;
               this.style.color = '#ffffff';
             "
             style="background: #5dade2; color: #fff"
           >
-            <option data-color="#5DADE2" value="img/amoniaco.png">
+            <option
+              data-color="#5DADE2"
+              data-descripcion="Amoniaco concentrado ideal para limpieza profunda, eliminación de grasa y preparación de soluciones de limpieza."
+              value="img/amoniaco.png"
+            >
               Amoniaco
             </option>
-            <option data-color="#6E2C00" value="img/creolina.png">
+            <option
+              data-color="#6E2C00"
+              data-descripcion="Creolina de alto poder para desinfección y control de malos olores en áreas pecuarias e industriales."
+              value="img/creolina.png"
+            >
               Creolina
             </option>
-            <option data-color="#F4D03F" value="img/aceite-mineral.png">
+            <option
+              data-color="#F4D03F"
+              data-descripcion="Aceite mineral formulado para lubricación, protección y mantenimiento de equipos y superficies."
+              value="img/aceite-mineral.png"
+            >
               Aceite Mineral
             </option>
-            <option data-color="#7F8C8D" value="img/teflon-comales.png">
+            <option
+              data-color="#7F8C8D"
+              data-descripcion="Recubrimiento antiadherente para comales y superficies metálicas de uso alimenticio."
+              value="img/teflon-comales.png"
+            >
               Teflón para Comales
             </option>
-            <option data-color="#AF7AC5" value="img/sarrigel.png">
+            <option
+              data-color="#AF7AC5"
+              data-descripcion="Gel especializado para limpieza y mantenimiento de superficies con suciedad difícil."
+              value="img/sarrigel.png"
+            >
               SARRIGEL
             </option>
-            <option data-color="#48C9B0" value="img/quitasarro.png">
+            <option
+              data-color="#48C9B0"
+              data-descripcion="Elimina eficazmente sarro, residuos minerales y manchas ocasionadas por agua dura."
+              value="img/quitasarro.png"
+            >
               Quitasarro
             </option>
-            <option data-color="#E74C3C" value="img/acido-muriatico.png">
+            <option
+              data-color="#E74C3C"
+              data-descripcion="Ácido muriático para limpieza profunda de pisos, concreto y superficies resistentes."
+              value="img/acido-muriatico.png"
+            >
               Ácido Muriático
             </option>
-            <option data-color="#C0392B" value="img/acido-industrial.png">
+            <option
+              data-color="#C0392B"
+              data-descripcion="Ácido de uso industrial al 60% para aplicaciones especializadas de limpieza y procesos industriales."
+              value="img/acido-industrial.png"
+            >
               Ácido Uso Industrial 60%
             </option>
-            <option data-color="#27AE60" value="img/mata-mosca.png">
+            <option
+              data-color="#27AE60"
+              data-descripcion="Insecticida líquido para el control efectivo de moscas en diferentes ambientes."
+              value="img/mata-mosca.png"
+            >
               Mata mosca líquido
             </option>
-            <option data-color="#BDC3C7" value="img/vinagre-transparente.png">
+            <option
+              data-color="#BDC3C7"
+              data-descripcion="Vinagre transparente ideal para limpieza doméstica, eliminación de olores y múltiples aplicaciones."
+              value="img/vinagre-transparente.png"
+            >
               Vinagre Transparente
             </option>
-            <option data-color="#8E44AD" value="img/veneno-liquido.png">
+            <option
+              data-color="#8E44AD"
+              data-descripcion="Veneno líquido formulado para el control de plagas en aplicaciones específicas."
+              value="img/veneno-liquido.png"
+            >
               Veneno Líquido
             </option>
           </select>
