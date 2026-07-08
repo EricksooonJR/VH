@@ -330,29 +330,49 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-function cambiarAroma(nombre, imagen, color, boton) {
+function cambiarAroma(nombre, imagen, color, elemento, descripcion) {
   // Cambiar imagen
-  document.getElementById("productoImagen").src = imagen;
+  const productoImagen = document.getElementById("productoImagen");
+  if (productoImagen) {
+    productoImagen.src = imagen;
+  }
 
-  // Cambiar nombre del aroma (si existe)
+  // Cambiar título
   const titulo = document.getElementById("aromaTitulo");
   if (titulo) {
     titulo.textContent = "Modelo Actual: " + nombre;
   }
 
-  // Quitar selección anterior
-  document.querySelectorAll(".aroma-btn").forEach((btn) => {
-    btn.classList.remove("active");
-    btn.style.background = "";
-    btn.style.color = "";
-  });
+  // Cambiar descripción (si existe)
+  const descripcionProducto = document.getElementById("descripcionProducto");
+  if (descripcionProducto && descripcion) {
+    descripcionProducto.textContent = descripcion;
+  }
 
-  // Activar botón seleccionado
-  boton.classList.add("active");
-  boton.style.background = color;
-  boton.style.color = "#fff";
+  // Si viene de botones
+  if (
+    elemento &&
+    elemento.classList &&
+    elemento.classList.contains("aroma-btn")
+  ) {
+    document.querySelectorAll(".aroma-btn").forEach((btn) => {
+      btn.classList.remove("active");
+      btn.style.background = "";
+      btn.style.color = "";
+    });
 
-  // Si utilizas el botón de WhatsApp para las muestras
+    elemento.classList.add("active");
+    elemento.style.background = color;
+    elemento.style.color = "#fff";
+  }
+
+  // Si viene de un selector
+  if (elemento && elemento.tagName === "SELECT") {
+    elemento.style.backgroundColor = color;
+    elemento.style.color = "#fff";
+  }
+
+  // Actualizar botón de WhatsApp
   if (typeof actualizarLinkMuestra === "function") {
     actualizarLinkMuestra(nombre);
   }
