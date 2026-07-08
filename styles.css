@@ -1123,9 +1123,7 @@ h2,
 .navbar a,
 .dropdown-btn,
 .dropdown-content a,
-.aroma-select,
 .aroma-select option,
-.aroma-btn,
 #aromaTitulo{
     text-transform:uppercase;
 }
@@ -1528,4 +1526,19 @@ span,
     margin-top:10px;
     background:var(--color-linea, #0b5e78);
     border-radius:20px;
+}
+
+/* Solo Aceite de Pino */
+.aceite-pino .titulo-pino span{
+    color:#064a0f;
+}
+
+@media(max-width:768px){
+    .aceite-pino .titulo-pino{
+        -webkit-text-stroke:2px #064a0f;
+    }
+
+    .aceite-pino .titulo-pino span{
+        color:#064a0f;
+    }
 }
