@@ -832,12 +832,12 @@ footer{
     }
 
     .slider{
-        height:145px;
+        height:158px;
         min-height:auto;
     }
 
     .banner-linea{
-        height:145px;
+        height:158px;
     }
 
     .banner-overlay{
@@ -866,6 +866,11 @@ footer{
     .lineas h2{
         font-size:1.5rem;
     }
+
+    .linea-card img{
+    height: 230px;
+}
+
 }
  
 /* =========================================
