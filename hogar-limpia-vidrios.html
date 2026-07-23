@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Otros Productos | VANHOGAR</title>
+    <title>Limpia Vidrios Windex | VANHOGAR</title>
 
     <link rel="stylesheet" href="styles.css" />
 
@@ -33,17 +33,19 @@
           </a>
 
           <div class="dropdown-content">
-            <a href="hogar.html"> Línea Hogar </a>
+            <a href="hogar.html">Línea Hogar</a>
 
-            <a href="lavanderia.html"> Línea Lavandería </a>
+            <a href="lavanderia.html">Línea Lavandería</a>
 
-            <a href="automotriz.html"> Línea Automotriz </a>
+            <a href="automotriz.html">Línea Automotriz</a>
 
-            <a href="corporal.html"> Línea Corporal </a>
+            <a href="corporal.html">Línea Corporal</a>
 
-            <a href="otros.html"> Otros Productos </a>
+            <a href="consumibles.html">Línea Consumibles</a>
 
-            <a href="jarcieria.html"> Línea Jarciería </a>
+            <a href="jarcieria.html">Línea Jarcería</a>
+
+            <a href="otros.html">Otros Productos</a>
           </div>
         </div>
 
@@ -78,125 +80,43 @@
     <!-- PRODUCTO -->
     <section
       class="producto-page"
-      style="--fondo-producto: url(&quot;img/fondo-otros.jpeg&quot;)"
+      style="--fondo-producto: url(&quot;img/fondo-limpia-vidrios.JPEG&quot;)"
     >
       <div class="producto-img">
         <img
           id="productoImagen"
-          src="img/amoniaco.png"
-          alt="Otros productos de limpieza"
+          src="img/winlimp.png"
+          alt="Limpia Vidrios Windex"
         />
       </div>
 
       <div class="producto-info-page">
         <h1>
-          <span>OTROS</span>
-          <span>PRODUCTOS</span>
+          <span>WINLIMP</span>
         </h1>
 
-        <p id="descripcionProducto">
-          Productos complementarios para limpieza, mantenimiento, desinfección y
-          uso especializado en el hogar, negocio o industria.
+        <p>
+          Limpiador liquido concentrado, formulado especialemente para
+          proporcionar una efectiva limepiza de vidrios en general. La
+          innovacion de su formula remueve la lluvia acida en cristales, grasa,
+          suciedad adeherida y es antiempañate libre de amoniaco.
         </p>
 
-        <h3>Presentaciones Disponibles</h3>
+        <!--     <h3>Presentaciones Disponibles</h3>
 
-        <div class="aromas-container select-mode">
-          <select
-            class="aroma-select"
-            onchange="
-              cambiarAroma(
-                this.options[this.selectedIndex].text,
-                this.value,
-                this.options[this.selectedIndex].dataset.color,
-                this,
-              );
-              document.getElementById('descripcionProducto').textContent =
-                this.options[this.selectedIndex].dataset.descripcion;
-              this.style.backgroundColor =
-                this.options[this.selectedIndex].dataset.color;
-              this.style.color = '#ffffff';
+        <div class="aromas-container">
+          <button
+            class="aroma-btn active"
+            style="background: #3a9ddb; color: #fff"
+            onclick="
+              cambiarAroma('Windex', 'img/limpia-vidrios.png', '#3A9DDB', this)
             "
-            style="background: #5dade2; color: #fff"
           >
-            <option
-              data-color="#5DADE2"
-              data-descripcion="Amoniaco concentrado ideal para limpieza profunda, eliminación de grasa y preparación de soluciones de limpieza."
-              value="img/amoniaco.png"
-            >
-              Amoniaco
-            </option>
-            <option
-              data-color="#6E2C00"
-              data-descripcion="Creolina de alto poder para desinfección y control de malos olores en áreas pecuarias e industriales."
-              value="img/creolina.png"
-            >
-              Creolina
-            </option>
-            <option
-              data-color="#F4D03F"
-              data-descripcion="Aceite mineral formulado para lubricación, protección y mantenimiento de equipos y superficies."
-              value="img/aceitemineral.png"
-            >
-              Aceite Mineral
-            </option>
-            <option
-              data-color="#7F8C8D"
-              data-descripcion="Recubrimiento antiadherente para comales y superficies metálicas de uso alimenticio."
-              value="img/teflon.png"
-            >
-              Teflón para Comales
-            </option>
-            <option
-              data-color="#BC2730"
-              data-descripcion="Gel especializado para limpieza y mantenimiento de superficies con suciedad difícil."
-              value="img/sarrigel.png"
-            >
-              Sarrigel
-            </option>
-            <option
-              data-color="#D32F2F"
-              data-descripcion="Producto que actua en eliminar las manchas
-de sales y sarro ocacionadas por la dureza
-del agua que se deposita en sanitarios y
-migitorios. Dado a su formula se activa con la
-friccion desintegrando las microcapsulas
-activas que lo componen."
-              value="img/sarric.png"
-            >
-              Quitasarro
-            </option>
-            <option
-              data-color="#6B6028"
-              data-descripcion="Ácido muriático para limpieza profunda de pisos, concreto y superficies resistentes."
-              value="img/muriatico.png"
-            >
-              Ácido Muriático
-            </option>
-            <option
-              data-color="#C0392B"
-              data-descripcion="Ácido de uso industrial al 60% para aplicaciones especializadas de limpieza y procesos industriales."
-              value="img/industrial.png"
-            >
-              Ácido Uso Industrial 60%
-            </option>
-            <option
-              data-color="#BDC3C7"
-              data-descripcion="Vinagre transparente ideal para limpieza doméstica, eliminación de olores y múltiples aplicaciones."
-              value="img/vinagre.png"
-            >
-              Vinagre Transparente
-            </option>
-            <option
-              data-color="#8E44AD"
-              data-descripcion="Veneno líquido formulado para el control de plagas en aplicaciones específicas."
-              value="img/matatodo.png"
-            >
-              Matatodo (Veneno Líquido)
-            </option>
-          </select>
-        </div>
-        <h3 id="aromaTitulo" style="display: none">Modelo Actual: Amoniaco</h3>
+            Windex
+          </button>
+        </div> -->
+
+        <h3 id="aromaTitulo" style="display: none">Modelo Actual: Windex</h3>
 
         <div class="muestra-gratis-container">
           <a
@@ -209,8 +129,8 @@ activas que lo componen."
           </a>
 
           <p class="muestra-gratis-texto">
-            Recibe una muestra sin costo y conoce la calidad de nuestros
-            productos especializados.
+            Recibe una muestra sin costo y conoce la calidad de nuestro limpia
+            vidrios.
           </p>
         </div>
       </div>
