@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Detergente Regenerador de Color | VANHOGAR</title>
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">
+          <img src="img/logo 1.png" alt="Logo VANHOGAR" />
+        </a>
+      </div>
+
+      <nav class="navbar">
+        <a href="index.html">Inicio</a>
+
+        <!-- DROPDOWN -->
+        <div class="dropdown">
+          <a href="#Lineas" class="dropdown-btn">
+            Lineas <i class="fa-solid fa-chevron-down"></i>
+          </a>
+
+          <div class="dropdown-content">
+            <a href="hogar.html"> Línea Hogar </a>
+
+            <a href="lavanderia.html"> Línea Lavandería </a>
+
+            <a href="automotriz.html"> Línea Automotriz </a>
+
+            <a href="corporal.html"> Línea Corporal </a>
+
+            <a href="otros.html"> Otros Productos </a>
+
+            <a href="jarcieria.html"> Línea Jarciería </a>
+          </div>
+        </div>
+
+        <!-- PRODUCTOS -->
+        <div class="dropdown">
+          <a href="#subcategorias" class="dropdown-btn">
+            Productos
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+
+          <div class="dropdown-content">
+            <a href="lavanderia-quitamanchas.html"> Quitamanchas </a>
+
+            <a href="lavanderia-desengrasante-ropa.html">
+              Desengrasantes y Desmugrante
+            </a>
+
+            <a href="lavanderia-regenerador-color.html">
+              Detergente Regenerador de Color
+            </a>
+
+            <a href="lavanderia-detergente-liquido.html">
+              Detergente Líquido
+            </a>
+
+            <a href="lavanderia-suavizante-fragancias.html">
+              Suavizante Fragancias Finas
+            </a>
+
+            <a href="lavanderia-suavizante-ultra.html">
+              Suavizante Ultra Reforzado
+            </a>
+
+            <a href="lavanderia-reforzador-aroma.html"> Reforzador de Aroma </a>
+          </div>
+        </div>
+
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <!-- PRODUCTO -->
+    <section
+      class="producto-page"
+      style="--fondo-producto: url(&quot;img/fondo-regenerador-color.png&quot;)"
+    >
+      <div class="producto-img">
+        <img
+          id="productoImagen"
+          src="img/regenerador-color.png"
+          alt="Detergente Regenerador de Color"
+        />
+      </div>
+
+      <div class="producto-info-page regenerador-color">
+        <h1 class="titulo-regenerador">
+          <span>DETERGENTE</span>
+          <span>REGENERADOR DE COLOR</span>
+        </h1>
+
+        <p>
+          Detergente formulado para proteger, revitalizar y conservar la
+          intensidad de los colores en cada lavado, ayudando a mantener las
+          prendas con un aspecto limpio, brillante y como nuevo por más tiempo.
+        </p>
+
+        <h3>Presentaciones Disponibles</h3>
+
+        <div class="aromas-container">
+          <button
+            class="aroma-btn active"
+            style="background: #6d28d9; color: #fff"
+            onclick="
+              cambiarAroma(
+                'Ropa de Color',
+                'img/regenerador-color.png',
+                '#6D28D9',
+                this,
+              )
+            "
+          >
+            Ropa de Color
+          </button>
+          <button
+            class="aroma-btn"
+            onclick="
+              cambiarAroma(
+                'Ropa Obscura',
+                'img/regenerador-obscura.png',
+                '#312E81',
+                this,
+              )
+            "
+          >
+            Ropa Obscura
+          </button>
+        </div>
+
+        <h3 id="aromaTitulo" style="display: none">
+          Modelo Actual: Ropa de Color
+        </h3>
+        <div class="muestra-gratis-container">
+          <a
+            href="https://wa.me/5210000000000?text=Quisiera%20solicitar%20mi%20muestra%20gratis%20del%20producto"
+            target="_blank"
+            class="btn-muestra-gratis"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+            Solicita tu muestra gratis
+          </a>
+
+          <p class="muestra-gratis-texto">
+            Solicita una muestra sin costo y conoce la eficacia de nuestro
+            detergente regenerador de color.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2026 VANHOGAR - Todos los derechos reservados</p>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Desengrasantes y Desmugrantes | VANHOGAR</title>
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">
+          <img src="img/logo 1.png" alt="Logo VANHOGAR" />
+        </a>
+      </div>
+
+      <nav class="navbar">
+        <a href="index.html">Inicio</a>
+
+        <!-- DROPDOWN -->
+        <div class="dropdown">
+          <a href="#Lineas" class="dropdown-btn">
+            Lineas <i class="fa-solid fa-chevron-down"></i>
+          </a>
+
+          <div class="dropdown-content">
+            <a href="hogar.html"> Línea Hogar </a>
+
+            <a href="lavanderia.html"> Línea Lavandería </a>
+
+            <a href="automotriz.html"> Línea Automotriz </a>
+
+            <a href="corporal.html"> Línea Corporal </a>
+
+            <a href="otros.html"> Otros Productos </a>
+
+            <a href="jarcieria.html"> Línea Jarciería </a>
+          </div>
+        </div>
+
+        <!-- PRODUCTOS -->
+        <div class="dropdown">
+          <a href="#subcategorias" class="dropdown-btn">
+            Productos
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+
+          <div class="dropdown-content">
+            <a href="lavanderia-quitamanchas.html"> Quitamanchas </a>
+
+            <a href="lavanderia-desengrasante-ropa.html">
+              Desengrasantes y Desmugrante
+            </a>
+
+            <a href="lavanderia-regenerador-color.html">
+              Detergente Regenerador de Color
+            </a>
+
+            <a href="lavanderia-detergente-liquido.html">
+              Detergente Líquido
+            </a>
+
+            <a href="lavanderia-suavizante-fragancias.html">
+              Suavizante Fragancias Finas
+            </a>
+
+            <a href="lavanderia-suavizante-ultra.html">
+              Suavizante Ultra Reforzado
+            </a>
+
+            <a href="lavanderia-reforzador-aroma.html"> Reforzador de Aroma </a>
+          </div>
+        </div>
+
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <!-- PRODUCTO -->
+    <section
+      class="producto-page"
+      style="--fondo-producto: url(&quot;img/desmugrante.png&quot;)"
+    >
+      <div class="producto-img">
+        <img
+          id="productoImagen"
+          src="img/mastercon.png"
+          alt="Desengrasante y Desmugrante para Ropa"
+        />
+      </div>
+
+      <div class="producto-info-page">
+        <h1>
+          <span>MASTERCON</span>
+        </h1>
+
+        <p>
+          Fórmula de alto desempeño diseñada para remover grasa, aceites y
+          suciedad difícil en prendas de trabajo, uniformes y ropa de uso
+          diario, ayudando a restaurar la limpieza de las fibras sin
+          maltratarlas.
+        </p>
+
+        <!--       <h3>Modelos Disponibles</h3>
+
+        <div class="aromas-container select-mode">
+          <select
+            class="aroma-select"
+            onchange="
+              cambiarAroma(
+                this.options[this.selectedIndex].text,
+                this.value,
+                this,
+              );
+              this.style.backgroundColor =
+                this.options[this.selectedIndex].dataset.color;
+              this.style.color = '#ffffff';
+            "
+          >
+            <option data-color="#D07B2D" value="img/mastercon.png">
+              Mastercon
+            </option>
+          </select>
+        </div>-->
+
+        <h3 id="aromaTitulo" style="display: none">Modelo Actual: Mastercon</h3>
+
+        <div class="muestra-gratis-container">
+          <a
+            href="https://wa.me/5210000000000?text=Quisiera%20solicitar%20mi%20muestra%20gratis%20del%20producto"
+            target="_blank"
+            class="btn-muestra-gratis"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+            Solicita tu muestra gratis
+          </a>
+
+          <p class="muestra-gratis-texto">
+            Solicita una muestra sin costo y comprueba la eficacia de nuestro
+            desengrasante para ropa.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2026 VANHOGAR - Todos los derechos reservados</p>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script src="script.js"></script>
+  </body>
+</html>
