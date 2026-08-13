@@ -952,6 +952,12 @@ footer{
     display:block;
 }
 
+.producto-info-page h1 .desengrasante-subtitulo{
+    font-size:.65em;
+    letter-spacing:normal;
+    white-space:nowrap;
+}
+
 
 .producto-info-page p{
     max-width:560px;
@@ -1005,6 +1011,12 @@ footer{
     box-shadow:
         0 8px 20px rgba(11,37,69,.08),
         inset 0 1px 0 rgba(255,255,255,.9);
+}
+
+/* Color inicial del modelo seleccionado en el regenerador de color */
+.aroma-btn.ropa-color.active{
+    background:linear-gradient(90deg, #ef4444, #f97316, #eab308, #22c55e, #06b6d4, #3b82f6, #8b5cf6, #ec4899);
+    color:#fff;
 }
 
 .aroma-btn:hover{
@@ -1701,4 +1713,56 @@ span,
 
     }
 
+}
+
+/* ===== EFECTO HUELLAS DE NEUMÁTICO: LÍNEA AUTOMOTRIZ ===== */
+.huellas-automotriz {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.huellas-automotriz img {
+    position: absolute;
+    width: min(82vw, 1050px);
+    right: 3vw;
+    bottom: -8vh;
+    opacity: 0;
+    filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.2));
+    animation: aparecerHuellas 3.8s cubic-bezier(.18, .72, .32, 1) 1 forwards;
+}
+
+@keyframes aparecerHuellas {
+    0% {
+        transform: translate(22vw, 16vh) scale(0.82);
+        opacity: 0;
+    }
+    28% {
+        opacity: 0.88;
+    }
+    72% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.82;
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .huellas-automotriz img {
+        width: 125vw;
+        right: -18vw;
+        bottom: 4vh;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .huellas-automotriz img {
+        animation: none;
+        display: none;
+    }
 }
