@@ -363,7 +363,7 @@ function cambiarAroma(nombre, imagen, color, elemento, descripcion) {
 
     elemento.classList.add("active");
     elemento.style.background = color;
-    elemento.style.color = "#fff";
+    elemento.style.color = elemento.dataset.textColor || "#fff";
   }
 
   // Si viene de un selector
