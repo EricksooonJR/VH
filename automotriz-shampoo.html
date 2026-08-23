@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shampoo Automotriz | VANHOGAR</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">
+          <img src="img/logo 1.png" alt="Logo VANHOGAR" />
+        </a>
+      </div>
+
+      <nav class="navbar">
+        <a href="index.html">Inicio</a>
+
+        <div class="dropdown">
+          <a href="#Lineas" class="dropdown-btn">
+            Lineas <i class="fa-solid fa-chevron-down"></i>
+          </a>
+          <div class="dropdown-content">
+            <a href="hogar.html">Línea Hogar</a>
+            <a href="lavanderia.html">Línea Lavandería</a>
+            <a href="automotriz.html">Línea Automotriz</a>
+            <a href="corporal.html">Línea Corporal</a>
+            <a href="otros.html">Otros Productos</a>
+            <a href="jarcieria.html">Línea Jarciería</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <a href="#subcategorias" class="dropdown-btn">
+            Productos <i class="fa-solid fa-chevron-down"></i>
+          </a>
+          <div class="dropdown-content">
+            <a href="automotriz-abrillantador.html">Abrillantador</a>
+            <a href="automotriz-glicerina.html">Glicerina</a>
+            <a href="automotriz-alumitec.html">Ácido para Metales (Alumitec)</a>
+            <a href="automotriz-desengrasante.html">Desengrasante</a>
+            <a href="automotriz-shampoo.html">Shampoo</a>
+            <a href="automotriz-blue-power.html">Blue Power</a>
+            <a href="automotriz-cera.html">Cera</a>
+            <a href="automotriz-aromatizante.html">Aromatizante</a>
+          </div>
+        </div>
+
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <section
+      class="producto-page"
+      style="--fondo-producto: url(&quot;img/fondo-shampoo.png&quot;)"
+    >
+      <div class="producto-img">
+        <img
+          id="productoImagen"
+          src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?q=80&w=1200&auto=format&fit=crop"
+          alt="Shampoo Automotriz Con Cera"
+        />
+      </div>
+
+      <div class="producto-info-page">
+        <h1>
+          <span>SHAMPOO</span>
+          <span>AUTOMOTRIZ</span>
+        </h1>
+
+        <p>
+          Shampoo automotriz formulado para remover suciedad, polvo y residuos
+          sin maltratar la pintura, dejando un acabado limpio y brillante.
+        </p>
+
+        <h3>Presentaciones Disponibles</h3>
+        <div class="aromas-container">
+          <button
+            class="aroma-btn active"
+            style="background: #2563eb; color: #fff"
+            onclick="
+              cambiarAroma(
+                'Con Cera',
+                'https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?q=80&w=1200&auto=format&fit=crop',
+                '#2563EB',
+                this,
+              )
+            "
+          >
+            Con Cera
+          </button>
+
+          <button
+            class="aroma-btn"
+            onclick="
+              cambiarAroma(
+                'Power Wash',
+                'https://images.unsplash.com/photo-1552930294-6b595f46bd3d?q=80&w=1200&auto=format&fit=crop',
+                '#0EA5E9',
+                this,
+              )
+            "
+          >
+            Power Wash
+          </button>
+
+          <button
+            class="aroma-btn"
+            onclick="
+              cambiarAroma(
+                'Nieve',
+                'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop',
+                '#94A3B8',
+                this,
+              )
+            "
+          >
+            Nieve
+          </button>
+        </div>
+
+        <h3 id="aromaTitulo" style="display: none">Modelo Actual: Con Cera</h3>
+
+        <div class="muestra-gratis-container">
+          <a
+            href="https://wa.me/5210000000000?text=Quisiera%20solicitar%20mi%20muestra%20gratis%20del%20producto"
+            target="_blank"
+            class="btn-muestra-gratis"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+            Solicita tu muestra gratis
+          </a>
+
+          <p class="muestra-gratis-texto">
+            Solicita una muestra sin costo y conoce el poder de nuestro shampoo
+            automotriz.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 VANHOGAR - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
