@@ -1318,6 +1318,51 @@ span,
   }
 }
 
+/* ===== EFECTO SPA / VAPOR DE HUMIDIFICADOR ===== */
+
+.spa-vapor {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 998;
+}
+
+.nube-vapor {
+  position: absolute;
+  bottom: -280px;
+  border-radius: 50% 44% 54% 46%;
+  background:
+    radial-gradient(circle at 35% 68%, rgba(222, 247, 241, 0.95) 0 16%, transparent 43%),
+    radial-gradient(circle at 66% 58%, rgba(184, 225, 216, 0.82) 0 18%, transparent 46%),
+    radial-gradient(circle at 47% 31%, rgba(238, 252, 249, 0.78) 0 16%, transparent 45%);
+  filter: blur(14px);
+  box-shadow: 0 0 55px rgba(178, 224, 214, 0.75);
+  animation: subirNubeVapor ease-in forwards;
+}
+
+@keyframes subirNubeVapor {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.45) rotate(-8deg);
+    opacity: 0;
+  }
+
+  16% { opacity: 0.88; }
+
+  65% { opacity: 0.62; }
+
+  100% {
+    transform: translate3d(100px, -125vh, 0) scale(1.5) rotate(10deg);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nube-vapor {
+    animation: none;
+  }
+}
+
 .banner-linea {
   animation: aparecerLimpio 1.2s ease-out;
 }
