@@ -329,6 +329,30 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 8000);
 });
 
+/* ===== EFECTO VAPOR SPA CORPORAL ===== */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const contenedor = document.querySelector(".spa-vapor");
+
+  if (!contenedor || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
+  }
+
+  for (let i = 0; i < 12; i++) {
+    const nube = document.createElement("div");
+    const tamano = Math.random() * 190 + 190;
+
+    nube.classList.add("nube-vapor");
+    nube.style.width = `${tamano}px`;
+    nube.style.height = `${tamano * 1.15}px`;
+    nube.style.left = `${Math.random() * 100}%`;
+    nube.style.animationDuration = `${Math.random() * 6 + 11}s`;
+    nube.style.animationDelay = `${-(Math.random() * 6 + 1)}s`;
+
+    contenedor.appendChild(nube);
+  }
+});
+
 
 function cambiarAroma(nombre, imagen, color, elemento, descripcion) {
   // Cambiar imagen
