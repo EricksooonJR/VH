@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Shampoo | VANHOGAR</title>
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">
+          <img src="img/logo 1.png" alt="Logo VANHOGAR" />
+        </a>
+      </div>
+
+      <nav class="navbar">
+        <a href="index.html">Inicio</a>
+
+        <!-- DROPDOWN -->
+        <div class="dropdown">
+          <a href="#Lineas" class="dropdown-btn">
+            Lineas <i class="fa-solid fa-chevron-down"></i>
+          </a>
+
+          <div class="dropdown-content">
+            <a href="hogar.html"> Línea Hogar </a>
+
+            <a href="lavanderia.html"> Línea Lavandería </a>
+
+            <a href="automotriz.html"> Línea Automotriz </a>
+
+            <a href="corporal.html"> Línea Corporal </a>
+
+            <a href="otros.html"> Otros Productos </a>
+
+            <a href="jarcieria.html"> Línea Jarciería </a>
+          </div>
+        </div>
+
+        <!-- DROPDOWN PRODUCTOS -->
+        <div class="dropdown">
+          <a href="#subcategorias" class="dropdown-btn">
+            Productos
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+
+          <div class="dropdown-content">
+            <a href="corporal-shampoo-manos.html"> Shampoo para Manos </a>
+
+            <a href="corporal-crema.html"> Crema Corporal </a>
+
+            <a href="corporal-gel-antibacterial.html"> Gel Antibacterial </a>
+
+            <a href="corporal-repelente.html"> Repelente de Mosquitos </a>
+
+            <a href="corporal-shampoo.html"> Shampoo </a>
+          </div>
+        </div>
+
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <!-- PRODUCTO -->
+    <section
+      class="producto-page"
+      style="--fondo-producto: url(&quot;img/fondo-shampoo-cuerpo.png&quot;)"
+    >
+      <div class="producto-img">
+        <img
+          id="productoImagen"
+          src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?q=80&w=1200&auto=format&fit=crop"
+          alt="Shampoo"
+        />
+      </div>
+
+      <div class="producto-info-page">
+        <h1>
+          <span>SHAMPOO</span>
+          <span>CORPORAL</span>
+        </h1>
+
+        <p>
+          Producto corporal diseñado para limpieza y cuidado del cabello,
+          ayudando a mantener frescura, higiene y suavidad en cada uso.
+        </p>
+
+        <h3>Modelos Disponibles</h3>
+
+        <div class="aromas-container">
+          <button
+            class="aroma-btn active"
+            style="background: #596f9f; color: #fff"
+            onclick="
+              cambiarAroma(
+                'Capilar',
+                'https://images.unsplash.com/photo-1526947425960-945c6e72858f?q=80&w=1200&auto=format&fit=crop',
+                '#596F9F',
+                this,
+              )
+            "
+          >
+            Capilar
+          </button>
+
+          <button
+            class="aroma-btn"
+            onclick="
+              cambiarAroma(
+                'Quirúrgico',
+                'https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1200&auto=format&fit=crop',
+                '#4D9A91',
+                this,
+              )
+            "
+          >
+            Quirúrgico
+          </button>
+        </div>
+
+        <h3 id="aromaTitulo" style="display: none">Modelo Actual: Capilar</h3>
+
+        <div class="muestra-gratis-container">
+          <a
+            href="https://wa.me/5210000000000?text=Quisiera%20solicitar%20mi%20muestra%20gratis%20del%20producto"
+            target="_blank"
+            class="btn-muestra-gratis"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+            Solicita tu muestra gratis
+          </a>
+
+          <p class="muestra-gratis-texto">
+            Recibe una muestra sin costo y conoce la calidad de nuestro shampoo
+            corporal.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 VANHOGAR - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

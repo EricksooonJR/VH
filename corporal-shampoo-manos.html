@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Shampoo para Manos | VANHOGAR</title>
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">
+          <img src="img/logo 1.png" alt="Logo VANHOGAR" />
+        </a>
+      </div>
+
+      <nav class="navbar">
+        <a href="index.html">Inicio</a>
+
+        <!-- DROPDOWN -->
+        <div class="dropdown">
+          <a href="#Lineas" class="dropdown-btn">
+            Lineas <i class="fa-solid fa-chevron-down"></i>
+          </a>
+
+          <div class="dropdown-content">
+            <a href="hogar.html"> Línea Hogar </a>
+
+            <a href="lavanderia.html"> Línea Lavandería </a>
+
+            <a href="automotriz.html"> Línea Automotriz </a>
+
+            <a href="corporal.html"> Línea Corporal </a>
+
+            <a href="otros.html"> Otros Productos </a>
+
+            <a href="jarcieria.html"> Línea Jarciería </a>
+          </div>
+        </div>
+
+        <!-- DROPDOWN PRODUCTOS -->
+        <div class="dropdown">
+          <a href="#subcategorias" class="dropdown-btn">
+            Productos
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+
+          <div class="dropdown-content">
+            <a href="corporal-shampoo-manos.html"> Shampoo para Manos </a>
+
+            <a href="corporal-crema.html"> Crema Corporal </a>
+
+            <a href="corporal-gel-antibacterial.html"> Gel Antibacterial </a>
+
+            <a href="corporal-repelente.html"> Repelente de Mosquitos </a>
+
+            <a href="corporal-shampoo.html"> Shampoo </a>
+          </div>
+        </div>
+
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <!-- PRODUCTO -->
+    <section
+      class="producto-page"
+      style="--fondo-producto: url(&quot;img/fondo-shampoo-manos.png&quot;)"
+    >
+      <div class="producto-img">
+        <img
+          id="productoImagen"
+          src="https://images.unsplash.com/photo-1626784215021-2e39ccf971cd?q=80&w=1200&auto=format&fit=crop"
+          alt="Shampoo para Manos"
+        />
+      </div>
+
+      <div class="producto-info-page">
+        <h1>
+          <span>SHAMPOO</span>
+          <span>PARA MANOS</span>
+        </h1>
+
+        <p>
+          Producto corporal diseñado para limpieza suave y efectiva de las
+          manos, dejando frescura, suavidad y agradables aromas.
+        </p>
+
+        <h3>Aromas Disponibles</h3>
+
+        <div class="aromas-container">
+          <button
+            class="aroma-btn active"
+            style="background: #c53955; color: #fff"
+            onclick="
+              cambiarAroma(
+                'Cereza',
+                'https://images.unsplash.com/photo-1528825871115-3581a5387919?q=80&w=1200&auto=format&fit=crop',
+                '#C53955',
+                this,
+              )
+            "
+          >
+            Cereza
+          </button>
+
+          <button
+            class="aroma-btn"
+            onclick="
+              cambiarAroma(
+                'Coco',
+                'https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?q=80&w=1200&auto=format&fit=crop',
+                '#B78B5E',
+                this,
+              )
+            "
+          >
+            Coco
+          </button>
+
+          <button
+            class="aroma-btn"
+            onclick="
+              cambiarAroma(
+                'Kiwi',
+                'https://images.unsplash.com/photo-1585059895524-72359e06133a?q=80&w=1200&auto=format&fit=crop',
+                '#6EAB40',
+                this,
+              )
+            "
+          >
+            Kiwi
+          </button>
+
+          <button
+            class="aroma-btn"
+            onclick="
+              cambiarAroma(
+                'Manzana Verde',
+                'https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?q=80&w=1200&auto=format&fit=crop',
+                '#65A94B',
+                this,
+              )
+            "
+          >
+            Manzana Verde
+          </button>
+
+          <button
+            class="aroma-btn"
+            onclick="
+              cambiarAroma(
+                'Durazno',
+                'https://images.unsplash.com/photo-1629828874514-62f0a0f52b5d?q=80&w=1200&auto=format&fit=crop',
+                '#E89462',
+                this,
+              )
+            "
+          >
+            Durazno
+          </button>
+
+          <button
+            class="aroma-btn"
+            onclick="
+              cambiarAroma(
+                'Uva',
+                'https://images.unsplash.com/photo-1515778767554-3f8390f4f7d8?q=80&w=1200&auto=format&fit=crop',
+                '#7653A8',
+                this,
+              )
+            "
+          >
+            Uva
+          </button>
+        </div>
+
+        <h3 id="aromaTitulo" style="display: none">Modelo Actual: Cereza</h3>
+
+        <div class="muestra-gratis-container">
+          <a
+            href="https://wa.me/5210000000000?text=Quisiera%20solicitar%20mi%20muestra%20gratis%20del%20producto"
+            target="_blank"
+            class="btn-muestra-gratis"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+            Solicita tu muestra gratis
+          </a>
+
+          <p class="muestra-gratis-texto">
+            Recibe una muestra sin costo y conoce la suavidad de nuestro shampoo
+            para manos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 VANHOGAR - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
