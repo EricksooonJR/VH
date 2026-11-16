@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Línea Jarciería | VANHOGAR</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body class="pagina-jarcieria">
+    <header class="header">
+      <div class="logo">
+        <a href="index.html"
+          ><img src="img/logo 1.png" alt="Logo VANHOGAR"
+        /></a>
+      </div>
+      <nav class="navbar">
+        <a href="index.html">Inicio</a>
+        <div class="dropdown">
+          <a href="#Lineas" class="dropdown-btn"
+            >Lineas <i class="fa-solid fa-chevron-down"></i
+          ></a>
+          <div class="dropdown-content"></div>
+        </div>
+        <div class="dropdown dropdown-productos">
+          <a href="#subcategorias" class="dropdown-btn"
+            >Productos <i class="fa-solid fa-chevron-down"></i
+          ></a>
+          <div class="dropdown-content"></div>
+        </div>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+    <main>
+      <section class="banner-linea">
+        <img src="img/jarcieria.png" alt="Productos de jarciería" />
+        <div class="banner-overlay"></div>
+      </section>
+      <section class="subcategorias" id="subcategorias">
+        <div class="lineas-container" data-categorias-jarcieria></div>
+      </section>
+    </main>
+    <footer id="contacto">
+      <p>© 2026 VANHOGAR - Todos los derechos reservados</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
