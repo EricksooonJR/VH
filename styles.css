@@ -381,7 +381,12 @@ footer{
 
     border-radius:10px;
 
-    overflow:hidden;
+    max-height:calc(100vh - 130px);
+    overflow-x:hidden;
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    scrollbar-width:thin;
+    scrollbar-color:#6bbfe8 #eef7ff;
 
     opacity:0;
     visibility:hidden;
@@ -392,6 +397,19 @@ footer{
 
     box-shadow:0 5px 15px rgba(0,0,0,0.2);
     z-index:1002;
+}
+
+.dropdown-content::-webkit-scrollbar{
+    width:8px;
+}
+
+.dropdown-content::-webkit-scrollbar-track{
+    background:#eef7ff;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb{
+    background:#6bbfe8;
+    border-radius:8px;
 }
 
 .dropdown-content a{
@@ -411,7 +429,7 @@ footer{
     color:var(--azul-menu);
     font-weight:700;
 }
-.dropdown:hover .dropdown-content{
+.dropdown.is-open .dropdown-content{
     opacity:1;
     visibility:visible;
     transform:translateY(0);
@@ -424,8 +442,9 @@ footer{
 
 .linea-img{
     width:100%;
-    height:180px;
-    object-fit:cover;
+    aspect-ratio:1200 / 800;
+    height:auto;
+    object-fit:contain;
     border-radius:18px;
     margin-bottom:18px;
 }
@@ -457,7 +476,8 @@ footer{
 .banner-linea img{
     width:100%;
     height:100%;
-    object-fit:cover;
+    /* Mantiene visibles los extremos de los banners 1920 × 700. */
+    object-fit:contain;
     object-position:center;
 }
 
@@ -838,7 +858,8 @@ footer{
     }
 
     .banner-linea{
-        height:158px;
+        height:auto;
+        aspect-ratio:1920 / 700;
     }
 
     .banner-overlay{
@@ -892,7 +913,7 @@ footer{
     position:absolute;
     inset:0;
     background:
-        linear-gradient(90deg,rgba(255,255,255,0.88) 0%,rgba(255,255,255,0.45) 42%,rgba(255,255,255,0.15) 100%),
+        linear-gradient(90deg,rgba(255,255,255,0.96) 0%,rgba(255,255,255,0.65) 55%,rgba(255,255,255,0.84) 100%),
         var(--fondo-producto, url('img/catalogo-fondo.jpg'));
     background-size:cover;
     background-position:center;
@@ -1085,7 +1106,7 @@ footer{
         height:380px;
     }
     .producto-page::before{
-        opacity:0.85;
+        opacity:1;
     }
 }
 
@@ -1810,4 +1831,458 @@ span,
         animation: none;
         display: none;
     }
+}
+
+/* Video de uso flotante: activo solo en las páginas de Alumitec y Blue Power. */
+.video-uso[hidden],
+.video-uso-panel[hidden] {
+  display: none;
+}
+
+.video-uso {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1200;
+}
+
+.video-uso-alumitec {
+  right: auto;
+  left: 24px;
+}
+
+.producto-info-page h3.shampoo-manos-aromas-titulo {
+  color: #7d344b;
+  background: linear-gradient(135deg, #f9dce5, #f2bfd0);
+}
+
+.video-uso-toggle {
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 20px;
+  color: #fff;
+  background: #0878bd;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.video-uso-toggle:hover {
+  background: #075f96;
+}
+
+.video-uso-panel {
+  position: absolute;
+  right: 0;
+  bottom: 62px;
+  width: min(380px, calc(100vw - 32px));
+  overflow: hidden;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, .28);
+}
+
+.video-uso-cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 16px;
+  color: #fff;
+  background: #0878bd;
+}
+
+.video-uso-cerrar {
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.video-uso-contenido {
+  display: grid;
+  min-height: 190px;
+  aspect-ratio: 16 / 9;
+  place-items: center;
+  padding: 18px;
+  color: #425466;
+  text-align: center;
+  background: #eef5f8;
+}
+
+.video-uso-contenido p {
+  line-height: 1.6;
+}
+
+.video-uso-contenido video,
+.video-uso-contenido iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 190px;
+  border: 0;
+  object-fit: contain;
+  background: #000;
+}
+
+@media (max-width: 600px) {
+  .video-uso {
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .video-uso-alumitec {
+    right: auto;
+    left: 14px;
+  }
+
+  .video-uso-panel {
+    bottom: 58px;
+  }
+}
+
+/* Página de Despachadores: tarjetas desplegables sin animaciones. */
+.pagina-despachadores .navbar .dropdown-productos {
+  display: none;
+}
+
+.pagina-despachadores .despachadores-encabezado {
+  min-height: 360px;
+  margin-top: 100px;
+  padding: 82px 24px 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: #fff;
+  text-align: center;
+  background: linear-gradient(135deg, #0b5e78, #16a6b8 58%, #8fd3f4);
+}
+
+.despachadores-etiqueta {
+  font-size: .85rem;
+  font-weight: 700;
+  letter-spacing: .22em;
+}
+
+.pagina-despachadores .despachadores-encabezado h1 {
+  font-size: clamp(2.3rem, 6vw, 4.6rem);
+  line-height: 1.05;
+}
+
+.pagina-despachadores .despachadores-encabezado p:last-child {
+  max-width: 620px;
+  line-height: 1.7;
+}
+
+.despachadores-secciones {
+  padding: 72px 7vw 90px;
+}
+
+.despachadores-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.despachador-card {
+  align-self: start;
+  overflow: hidden;
+  border: 1px solid rgba(11, 94, 120, .13);
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 8px 25px rgba(11, 37, 69, .08);
+}
+
+.despachador-card-toggle {
+  width: 100%;
+  min-height: 190px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  border: 0;
+  color: #0b5e78;
+  background: #fff;
+  cursor: pointer;
+  font: inherit;
+}
+
+.despachador-card-icono {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #087d9b;
+  background: #e5f7fa;
+  font-size: 1.6rem;
+}
+
+.despachador-card-nombre {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.despachador-card-flecha {
+  font-size: .9rem;
+}
+
+.despachador-card-toggle[aria-expanded="true"] .despachador-card-flecha {
+  transform: rotate(180deg);
+}
+
+.despachador-card-contenido {
+  padding: 0 26px 26px;
+  color: #45545b;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.despachador-card-contenido[hidden] {
+  display: none;
+}
+
+.pagina-despachadores .despachadores-encabezado,
+.pagina-despachadores .despachadores-secciones,
+.pagina-despachadores .despachador-card,
+.pagina-despachadores .despachador-card-toggle {
+  animation: none !important;
+  animation-timeline: auto !important;
+  animation-range: normal !important;
+}
+
+@media (max-width: 850px) {
+  .despachadores-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .pagina-despachadores .despachadores-encabezado {
+    min-height: 300px;
+    padding-top: 60px;
+  }
+
+  .despachadores-secciones {
+    padding: 46px 20px 60px;
+  }
+
+  .despachadores-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pagina-despachadores .despachadores-banner {
+  margin-top: 0;
+  animation: none;
+}
+
+.pagina-despachadores .despachadores-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.pagina-despachadores .despachadores-banner .banner-overlay {
+  z-index: 1;
+  padding: clamp(28px, 7vw, 90px);
+  gap: 8px;
+}
+
+.pagina-despachadores .despachadores-banner .banner-overlay h1 {
+  font-size: clamp(2.2rem, 6vw, 5.5rem);
+  letter-spacing: clamp(2px, 1vw, 12px);
+}
+
+.pagina-despachadores .despachadores-banner .despachadores-etiqueta {
+  font-size: .85rem;
+  font-weight: 700;
+  letter-spacing: .22em;
+}
+
+.pagina-despachadores .despachadores-secciones {
+  padding: 70px 7vw 90px;
+}
+
+.pagina-despachadores .lineas-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.pagina-despachadores .linea-card {
+  animation: none !important;
+  animation-timeline: auto !important;
+  animation-range: normal !important;
+  cursor: default;
+}
+
+.pagina-despachadores .linea-card:hover {
+  transform: none;
+}
+
+.pagina-despachadores .despachador-detalle {
+  min-height: 280px;
+  padding: 80px 24px;
+  text-align: center;
+  background: linear-gradient(to bottom, #fff, #eef8fb);
+}
+
+.pagina-despachadores .despachador-detalle h2 {
+  margin-bottom: 14px;
+  color: #0b5e78;
+}
+
+.pagina-despachadores .despachador-detalle p {
+  max-width: 700px;
+  margin: 0 auto 24px;
+  line-height: 1.7;
+}
+
+.pagina-despachadores .volver-despachadores {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 999px;
+  color: #fff;
+  background: #0b74a5;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .pagina-despachadores .despachadores-banner .banner-overlay {
+    padding: 24px;
+  }
+
+  .pagina-despachadores .despachadores-secciones {
+    padding: 46px 20px 60px;
+  }
+}
+
+/* Línea Jarciería: conserva la distribución de Corporal sin efectos de entrada. */
+.pagina-jarcieria .navbar .dropdown-content {
+  background: #ffffff;
+}
+
+.pagina-jarcieria .navbar .dropdown-content a {
+  color: #111111;
+}
+
+.pagina-jarcieria .navbar .dropdown-productos {
+  display: none;
+}
+
+.pagina-consumibles .navbar .dropdown-productos {
+  display: none;
+}
+
+.pagina-consumibles .banner-linea,
+.pagina-consumibles .linea-card {
+  animation: none !important;
+  animation-timeline: auto !important;
+  animation-range: normal !important;
+}
+
+.pagina-consumibles .linea-card {
+  cursor: default;
+}
+
+.pagina-consumibles .linea-card:hover {
+  transform: none;
+}
+
+.pagina-consumibles .linea-card p {
+  line-height: 1.65;
+  text-align: center;
+}
+
+.pagina-jarcieria .navbar .dropdown-content span {
+  display: block;
+  padding: 15px;
+  color: #111111;
+  text-transform: uppercase;
+}
+
+.pagina-jarcieria .navbar .dropdown-content a:hover {
+  color: var(--azul-menu);
+  background: #eef7ff;
+}
+
+.pagina-jarcieria[data-pagina-jarcieria] .aroma-select {
+  border-color: #6bbfe8;
+  background: linear-gradient(135deg, #ffffff, #d8fff5, #8fd3f4);
+  color: #0b5e78 !important;
+  -webkit-text-fill-color: #0b5e78;
+}
+
+.pagina-jarcieria[data-pagina-jarcieria] .aroma-select option {
+  color: #0b5e78;
+  background: #d8f3fc;
+  -webkit-text-fill-color: #0b5e78;
+}
+
+.pagina-jarcieria .banner-linea,
+.pagina-jarcieria .linea-card {
+  animation: none !important;
+  animation-timeline: auto !important;
+  animation-range: normal !important;
+}
+
+.pagina-jarcieria .linea-card:hover {
+  transform: none;
+}
+
+.pagina-jarcieria .linea-card {
+  cursor: default;
+}
+
+.pagina-jarcieria .jarcieria-categoria-banner .banner-overlay {
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(4, 35, 47, .58), rgba(4, 35, 47, .08));
+}
+
+.pagina-jarcieria .jarcieria-categoria-banner .banner-overlay h1 {
+  font-size: clamp(2rem, 6vw, 5rem);
+  letter-spacing: clamp(1px, .7vw, 8px);
+}
+
+.jarcieria-categoria-info {
+  min-height: 260px;
+  padding: 70px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  text-align: center;
+  background: linear-gradient(to bottom, #fff, #eef8fb);
+}
+
+.jarcieria-categoria-info p {
+  color: #45545b;
+  font-size: 1.15rem;
+}
+
+.jarcieria-volver {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 999px;
+  color: #fff;
+  background: #0b74a5;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .pagina-jarcieria .jarcieria-categoria-banner .banner-overlay {
+    padding: 24px;
+  }
 }
